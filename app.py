@@ -13,6 +13,7 @@ app = FastAPI(
     title="Parlance AI-Infused Pipeline",
     description="An AI-powered healthcare assistant that helps find doctor contact information using natural language queries. Compatible with Watson Orchestrate for enterprise workflow automation.",
     version="1.0.0",
+    openapi_version="3.0.2",
     docs_url="/docs",
     redoc_url="/redoc",
     contact={
@@ -22,6 +23,16 @@ app = FastAPI(
     license_info={
         "name": "MIT",
     },
+    servers=[
+        {
+            "url": "https://voiceagent-production-c9ed.up.railway.app",
+            "description": "Production server on Railway"
+        },
+        {
+            "url": "http://localhost:8080",
+            "description": "Development server"
+        }
+    ]
 )
 
 
